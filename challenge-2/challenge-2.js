@@ -6,8 +6,9 @@ function speedDetect() {
         let speed = parseInt(enteredSpeed, 10);        // converts speed into integers
         const speedLimit = 70;
         const maxPoints = 12;
+    
+        // if else statements to ensure condition is true before running the code block in the statement
         
-
         if (speed <= speedLimit) {          // no demerit points if the speed is less than or equal to 70
             alert("Ok");
         } else {

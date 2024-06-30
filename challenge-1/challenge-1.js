@@ -5,15 +5,17 @@ function studentGrade() {
         let enteredMarks = prompt("Enter marks here (0-100):");   // prompt allowing user to input data when button is clicked, stored in variable
         let marks = parseInt(enteredMarks, 10);           // converts marks entered into integers
 
+        // else if statements ensure condition is true before running code block in statements
+
         if (marks < 0) {
-           return alert("Please enter a valid mark(0-100)");  // ensures marks entered are 0 or more
+           return alert("Please enter a valid number (0-100)");  // ensures marks entered are 0 or more
 
            } else if (marks > 100) {
-            return alert("Please enter a valid mark(0-100)");  // ensures marks entered are less than 100
+            return alert("Please enter a valid number (0-100)");  // ensures marks entered are less than 100
            }
         
 
-    let gradedMark;     // grade allocation for marks using if...else...if statements
+    let gradedMark;  // grade allocation for marks if condition in parentheses returns true. Relational operators used for classification
     
     if (marks > 79) {
         gradedMark = "A";

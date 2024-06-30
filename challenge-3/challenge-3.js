@@ -2,14 +2,14 @@ function netSalary() {
     const input = document.getElementById("promptbutton");   
 
     input.addEventListener('click', function() {
-        let salary = prompt("Enter your gross salary(basic salary plus benefits, if any):"); // prompt upon clicking the button, enabling user to input data
+        let salary = prompt("Enter your gross salary:");    // prompt upon clicking the button, enabling user to input data
         let basicSalary = parseInt(salary, 10); 
 
 
-        let payee;  // calculation of payee according to the respective tax bracket the user's income will fall under
-        if (basicSalary <= 24000) {
+        let payee;       // calculation of PAYE according to the respective tax bracket the user's income will fall under
+        if (basicSalary <= 24000) {             // PAYE calculation code block runs in statement whose condition returns true
             payee = (basicSalary * 10.0) / 100;
-        } else if (basicSalary >= 24001 && basicSalary <= 32333) {
+        } else if (basicSalary >= 24001 && basicSalary <= 32333) {   // and operator ensures both conditions true before running code block
             payee = (basicSalary * 25.0) / 100;
         } else if (basicSalary >= 32334 && basicSalary <= 500000) {
             payee = (basicSalary * 30.0) / 100;
@@ -20,12 +20,12 @@ function netSalary() {
         }
 
 
-        let nhif;   // calculation of nhif deductions according to the respective income bracket the user's data will fall under
-        if (basicSalary <= 5999) {
+        let nhif;       // calculation of nhif deductions according to the respective income bracket the user's data will fall under
+        if (basicSalary <= 5999) {        // code block of statement whose condition returns true runs hence deducting NHIF contribution
             nhif = 150;
-        } else if (basicSalary >= 6000 && basicSalary <= 7999) {
-            nhif = 300;
-        } else if (basicSalary >= 8000 && basicSalary <= 11999) {
+        } else if (basicSalary >= 6000 && basicSalary <= 7999) {    // and operator ensures both conditions true before running code block
+            nhif = 300; 
+        } else if (basicSalary >= 8000 && basicSalary <= 11999) {   // Relational operators used to define tax brackets
             nhif = 400;
         } else if (basicSalary >= 12000 && basicSalary <= 14999) {
             nhif = 500;
@@ -77,10 +77,10 @@ function netSalary() {
         // tier II deductions
         if (basicSalary > tier1max) {           // pensionable income is more than 7000
             if (basicSalary <= tier2max) {
-                tier2 = (tier2Salary * 6) / 100;
-            } else if (basicSalary > tier2max && tier2Salary <= tier2max) {     // gross income more than 36000 but tier II pensionable pay less than 36000
+                tier2 = (tier2Salary * 6) / 100;                 // and operator ensures both conditions true before running code block
+            } else if (basicSalary > tier2max && tier2Salary <= tier2max) {   // gross income more than 36000 but tier II pensionable pay less than 36000
                 tier2 = (tier2Salary * 6) / 100;       // calculated with remainder pensionable pay from tier I
-            } else if (basicSalary > tier2max && tier2Salary > tier2max) {       // both income and tier II pensionable pay more than 36000
+            } else if (basicSalary > tier2max && tier2Salary > tier2max) {      // both income and tier II pensionable pay more than 36000
                 tier2 = (tier2max * 6) / 100;          // calculated with maximum tier II pensionable pay
             }
         }
