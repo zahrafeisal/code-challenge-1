@@ -3,6 +3,7 @@ function speedDetect() {
 
     enterSpeed.addEventListener('click', function() {      // enables user to enter speed of car upon clicking the button
         let enteredSpeed = prompt("Enter the speed of the car (km/s):");
+
         let speed = parseInt(enteredSpeed, 10);        // converts speed into integers
         const speedLimit = 70;
         const maxPoints = 12;
