@@ -1,0 +1,31 @@
+#wholeBody {
+    background-color: azure;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+#challenges {
+    margin-top: 20px;
+}
+h2 {
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+#promptbutton {
+    margin-top: 40px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding-top: 20px;
+}
