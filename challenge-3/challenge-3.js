@@ -2,56 +2,56 @@ function netSalary() {
     const input = document.getElementById("promptbutton");   
 
     input.addEventListener('click', function() {
-        let salary = prompt("Enter your gross salary:");    // prompt upon clicking the button, enabling user to input data
+        let salary = prompt("Enter your gross salary (basic salary plus benefits) :");    // prompt upon clicking the button, enabling user to input data
         let basicSalary = parseInt(salary, 10); 
 
 
-        let payee;       // calculation of PAYE according to the respective tax bracket the user's income will fall under
-        if (basicSalary <= 24000) {             // PAYE calculation code block runs in statement whose condition returns true
+        let payee;                 // calculation of PAYE according to the respective tax bracket the user's income will fall under
+        if (basicSalary <= 24000) {                    // PAYE calculation code block runs in statement whose condition returns true
             payee = (basicSalary * 10.0) / 100;
-        } else if (basicSalary >= 24001 && basicSalary <= 32333) {   // and operator ensures both conditions true before running code block
-            payee = (basicSalary * 25.0) / 100;
-        } else if (basicSalary >= 32334 && basicSalary <= 500000) {
+        } else if (basicSalary <= 32333) {             // ensures condition is true before running code block
+            payee = (basicSalary * 25.0) / 100;        // if false, code block is ingored and js engine moves to the next statement
+        } else if (basicSalary <= 500000) {
             payee = (basicSalary * 30.0) / 100;
-        } else if (basicSalary >= 500001 && basicSalary <= 800000) {
+        } else if (basicSalary <= 800000) {
             payee = (basicSalary * 32.5) / 100;
-        } else {
+        } else {                                        // salary above Ksh. 800000
             payee = (basicSalary * 35.0) / 100;
         }
 
 
-        let nhif;       // calculation of nhif deductions according to the respective income bracket the user's data will fall under
-        if (basicSalary <= 5999) {        // code block of statement whose condition returns true runs hence deducting NHIF contribution
+        let nhif;             // calculation of nhif deductions according to the respective income bracket the user's data will fall under
+        if (basicSalary <= 5999) {          // code block of statement whose condition returns true runs hence deducting NHIF contribution
             nhif = 150;
-        } else if (basicSalary >= 6000 && basicSalary <= 7999) {    // and operator ensures both conditions true before running code block
+        } else if (basicSalary <= 7999) {    
             nhif = 300; 
-        } else if (basicSalary >= 8000 && basicSalary <= 11999) {   // Relational operators used to define tax brackets
+        } else if (basicSalary <= 11999) {      // Relational operators used to define tax brackets
             nhif = 400;
-        } else if (basicSalary >= 12000 && basicSalary <= 14999) {
+        } else if (basicSalary <= 14999) {
             nhif = 500;
-        } else if (basicSalary >= 15000 && basicSalary <= 19999) {
+        } else if (basicSalary <= 19999) {
             nhif = 600;
-        } else if (basicSalary >= 20000 && basicSalary <= 24999) {
+        } else if (basicSalary <= 24999) {
             nhif = 750;
-        } else if (basicSalary >= 25000 && basicSalary <= 29999) {
+        } else if (basicSalary <= 29999) {
             nhif = 850;
-        } else if (basicSalary >= 30000 && basicSalary <= 34999) {
+        } else if (basicSalary <= 34999) {
             nhif = 900;
-        } else if (basicSalary >= 35000 && basicSalary <= 39999) {
+        } else if (basicSalary <= 39999) {
             nhif = 950;
-        } else if (basicSalary >= 40000 && basicSalary <= 44999) {
+        } else if (basicSalary <= 44999) {
             nhif = 1000;
-        } else if (basicSalary >= 45000 && basicSalary <= 49999) {
+        } else if (basicSalary <= 49999) {
             nhif = 1100;
-        } else if (basicSalary >= 50000 && basicSalary <= 59999) {
+        } else if (basicSalary <= 59999) {
             nhif = 1200;
-        } else if (basicSalary >= 60000 && basicSalary <= 69999) {
+        } else if (basicSalary <= 69999) {
             nhif = 1300;
-        } else if (basicSalary >= 70000 && basicSalary <= 79999) {
+        } else if (basicSalary <= 79999) {
             nhif = 1400;
-        } else if (basicSalary >= 80000 && basicSalary <= 89999) {
+        } else if (basicSalary <= 89999) {
             nhif = 1500;
-        } else if (basicSalary >= 90000 && basicSalary <= 99999) {
+        } else if (basicSalary <= 99999) {
             nhif = 1600;
         } else {
             nhif = 1700;
