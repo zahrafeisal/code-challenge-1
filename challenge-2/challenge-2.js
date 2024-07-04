@@ -13,7 +13,7 @@ function speedDetect() {
         if (speed <= speedLimit) {          // no demerit points if the speed is less than or equal to 70
             alert("Ok");
         } else {
-            let points = ((speed - speedLimit) / 5);      // for every 5 km/s above the speed limit, one demerit point is gained
+            let points = Math.floor(((speed - speedLimit) / 5));      // for every 5 km/s above the speed limit, one demerit point is gained
             if (points > maxPoints) {
                 alert("License suspended");       // alert when the demerit points exceed 12
             } else {
